@@ -1,1 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação Git & GitHub com Imagens</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .slide {
+            width: 297mm; 
+            height: 210mm;
+            margin: 20px auto;
+            padding: 60px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            page-break-after: always;
+        }
+
+        .slide-title {
+            font-weight: 700;
+            color: #24292e;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #f05032;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .content-text {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .code-block {
+            font-family: 'Fira Code', monospace;
+            background: #272822;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+
+        .bg-git { background-color: #f05032 !important; color: white; }
+        .text-git { color: #f05032; }
+
+        /* Estilo para imagens dos slides */
+        .slide-img {
+            max-height: 350px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        @media print {
+            body { background: none; }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
+                page-break-after: always;
+            }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+  <!-- SLIDE 1: CAPA -->
+    <div class="slide text-center bg-git">
+        <div class="mb-4">
+            <!-- Logos do Git e GitHub -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" height="80" class="me-3 bg-white p-2 rounded">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" height="80" class="bg-white p-2 rounded">
+        </div>
+        <h1 class="display-1 fw-bold text-white">Git & GitHub</h1>
+        <p class="lead text-white opacity-75 fs-3">Controle de Versão e Colaboração</p>
+    </div>
+
+    <!-- SLIDE 2: O PROBLEMA -->
+    <div class="slide">
+        <div class="row align-items-center">
+            <div class="col-6">
+                <h2 class="slide-title">O Problema</h2>
+                <div class="content-text">
+                    <ul class="list-unstyled">
+                        <li class="mb-4">❌ <strong>Caos nos arquivos:</strong> Versões espalhadas.</li>
+                        <li class="mb-4">❌ <strong>Medo de apagar:</strong> Sem backup do código.</li>
+                        <li class="mb-4">❌ <strong>Conflitos:</strong> Sobrescrever trabalho alheio.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 text-center">
+                <!-- Imagem representando caos/bagunça de arquivos -->
+                <img src="https://images.unsplash.com/photo-1586281380349-632516ae8a8b?q=80&w=500&auto=format&fit=crop" class="slide-img shadow" alt="Caos de arquivos">
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: O QUE É GIT -->
+    <div class="slide">
+        <div class="row align-items-center">
+            <div class="col-6 text-center">
+                <!-- Imagem representando a ideia de "snapshot" ou tempo -->
+                <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=500&auto=format&fit=crop" class="slide-img shadow" alt="Snapshot">
+            </div>
+            <div class="col-6">
+                <h2 class="slide-title">O que é o Git?</h2>
+                <div class="content-text">
+                    <p>É um <strong>Sistema de Controle de Versões Distribuído (DVCS)</strong>.</p>
+                    <div class="p-3 border rounded bg-light">
+                        <strong>Snapshot:</strong> Ele não salva apenas a mudança, mas o estado completo do projeto em um momento do tempo.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: CONCEITOS -->
+    <div class="slide text-center">
+        <h2 class="slide-title">Conceitos Fundamentais</h2>
+        <div class="row align-items-center">
+            <div class="col-6 content-text text-start">
+                <p><strong>Commit:</strong> Um ponto de salvamento.</p>
+                <p><strong>Branch:</strong> Uma ramificação do código.</p>
+                <p><strong>Merge:</strong> A união de versões.</p>
+            </div>
+            <div class="col-6">
+                <!-- Diagrama de Branching do Git -->
+                <img src="https://wac-cdn.atlassian.com/dam/jcr:3726345d-e076-4664-98c3-27d434131d58/git-branching-diagram.png?cdnVersion=1873" class="slide-img" alt="Git Branching">
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: O QUE É GITHUB -->
+    <div class="slide">
+        <div class="row align-items-center">
+            <div class="col-6">
+                <h2 class="slide-title">O que é o GitHub?</h2>
+                <div class="content-text">
+                    <p>Plataforma de hospedagem para repositórios Git.</p>
+                    <p>O "Facebook" dos programadores, onde você exibe seu código e colabora com o mundo.</p>
+                </div>
+            </div>
+            <div class="col-6 text-center">
+                <!-- Octocat do GitHub -->
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="250" class="slide-img" alt="Octocat">
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: GIT VS GITHUB -->
+    <div class="slide">
+        <h2 class="slide-title">Git vs. GitHub</h2>
+        <div class="content-text">
+            <table class="table table-bordered fs-4 text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Git</th>
+                        <th>GitHub</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Software Local (Instalado)</td>
+                        <td>Serviço Online (Nuvem)</td>
+                    </tr>
+                    <tr>
+                        <td>Gerencia o histórico</td>
+                        <td>Hospeda o histórico</td>
+                    </tr>
+                    <tr>
+                        <td>Funciona offline</td>
+                        <td>Requer internet</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SLIDE 7: FLUXO DE TRABALHO -->
+    <div class="slide text-center">
+        <h2 class="slide-title">Fluxo de Trabalho</h2>
+        <div class="content-text mt-5">
+            <div class="d-flex justify-content-around align-items-center">
+                <div class="p-3 border rounded bg-light">📁<br>Working Dir</div>
+                <div class="text-git fs-2">➔</div>
+                <div class="p-3 border rounded bg-light">⏳<br>Staging Area</div>
+                <div class="text-git fs-2">➔</div>
+                <div class="p-3 border rounded bg-light">💾<br>Local Repo</div>
+                <div class="text-git fs-2">➔</div>
+                <div class="p-3 border rounded bg-light">☁️<br>GitHub</div>
+            </div>
+            <p class="mt-4 fs-5"><code>git add</code> $\rightarrow$ <code>git commit</code> $\rightarrow$ <code>git push</code></p>
+        </div>
+    </div>
+
+    <!-- SLIDE 8: COMANDOS -->
+    <div class="slide">
+        <h2 class="slide-title">Guia Rápido de Comandos</h2>
+        <div class="row align-items-center">
+            <div class="col-7">
+                <div class="code-block">
+                    <code class="text-warning">git init</code> &nbsp; # Iniciar repo<br>
+                    <code class="text-warning">git clone [url]</code> &nbsp; # Copiar repo<br>
+                    <code class="text-warning">git add .</code> &nbsp; # Preparar arquivos<br>
+                    <code class="text-warning">git commit -m "msg"</code> &nbsp; # Salvar<br>
+                    <code class="text-warning">git push</code> &nbsp; # Enviar para nuvem<br>
+                    <code class="text-warning">git pull</code> &nbsp; # Atualizar local
+                </div>
+            </div>
+            <div class="col-5 text-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/6132/6132287.png" height="200" alt="Terminal Icon">
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 9: COLABORAÇÃO -->
+    <div class="slide">
+        <h2 class="slide-title">Colaboração no GitHub</h2>
+        <div class="row align-items-center">
+            <div class="col-6 content-text">
+                <div class="mb-4"><strong>Fork:</strong> Copiar um projeto para si.</div>
+                <div class="mb-4"><strong>Pull Request:</strong> Sugerir melhorias ao autor.</div>
+                <div class="mb-4"><strong>Issues:</strong> Reportar bugs ou sugerir funções.</div>
+            </div>
+            <div class="col-6 text-center">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=500&auto=format&fit=crop" class="slide-img shadow" alt="Colaboração">
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: CONCLUSÃO -->
+    <div class="slide text-center">
+        <h2 class="slide-title">Hora de Praticar!</h2>
+        <div class="content-text">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=500&auto=format&fit=crop" class="slide-img mb-4 shadow" alt="Tecnologia">
+            <p class="fs-3">🚀 <strong>Crie sua conta no GitHub e suba seu primeiro projeto!</strong></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
